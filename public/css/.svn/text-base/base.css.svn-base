@@ -1,0 +1,230 @@
+/* FONT DECLARATIONS */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4em;
+    margin: 0;
+}
+
+
+A, A:visited {
+    color: #069;
+    text-decoration: none;
+}
+
+A:hover {
+    text-decoration: underline;
+}
+
+A img {
+    border: none;
+}
+
+
+h4 {
+    font-weight: normal;
+    color: #777;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+
+.content {
+    padding: 0 20px;
+}
+
+
+
+
+h2 {
+    text-align: left;
+}
+
+h4 {
+    font-size: larger;
+    margin-bottom: 0;
+    font-size: 11px;
+    border-bottom: 1px solid #333;
+    padding-top: 5px;
+
+}
+
+.diag-bg {
+    background-image: url(/css/images/diag.png);
+    background-repeat: repeat;
+}
+
+
+/* FX */
+
+.inactive {
+    text-decoration: line-through;
+}
+
+.bad {
+    color: red;
+}
+
+.good {
+    color: green;
+}
+
+
+.columns .col1 {
+    width: 50%;
+    float: left;
+}
+
+.columns .col2 {
+    width: 50%;
+    float: left;
+}
+
+/* Ticks */
+
+.ticks div {
+    position: relative;
+    white-space: normal;
+}
+
+.tick {
+    width: 5px;
+    height: 5px;
+    margin-right: 1px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    float: left;
+}
+
+.tick-count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    text-align: center;
+    margin: auto auto;
+    width: 100%;
+    display: none;
+}
+
+/* Clear */
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.wrap {
+    white-space: normal;
+}
+
+/* Table */
+
+
+
+.note {
+    background: #eee;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    padding: 0 4px;
+    margin: 0 1px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+th {
+    text-align: left;
+    font-weight: normal;
+    color: #333;
+}
+
+
+.datatable th {
+    padding-right: 10px;
+    cursor: pointer;
+    color: #888;
+}
+
+.datatable th.sorting_desc,
+.datatable th.sorting_asc{
+    color: #333;
+}
+
+.datatable th.sorting:hover {
+    color: #069;
+}
+
+.datatable th.sorting:not(:hover) {
+    background: #fff;
+}
+
+.datatable tr {
+    border-bottom: 1px solid #eee
+}
+
+.datatable:not(.candidates) tr:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.datatable:not(.candidates) tr:hover a {
+    text-decoration: underline;
+}
+
+td {
+    padding: 0.5em 2px;
+    vertical-align: top !important;
+    white-space: nowrap;
+}
+
+.candidates td {
+    padding: 1em 8px 1em 2px;
+}
+
+table.datatable {
+    width: 100%;
+}
+
+thead tr,
+.datatable thead tr {
+    background: #fff;
+    border-bottom: 1px solid #333;
+}
+
+.datatable td,
+.datatable th {
+    width: 7%;
+}
+
+.linkedin {
+    text-indent: -10000px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/linkedin_16.png);
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    opacity: 0.4;
+}
+
+.linkedin:hover {
+    -webkit-box-shadow: 0 0 18px #2daebf;
+    opacity: 1;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Candidate Catapult<%= locals.page_title ? ' - ' + page_title : '' %></title>
+
+    <link rel="alternate" type="application/atom+xml" title="OPOWER Jobs Feed" href="http://opowerjobs.com/atom.xml" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/js/datatables/dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="/css/css3buttons/css3buttons.css" />
+    <link rel="stylesheet" type="text/css" href="/css/isotope.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/swimlanes.css" />
+    <link rel="stylesheet" type="text/css" href="/css/candidate.css" />
+    <link rel="stylesheet" type="text/css" href="/css/req.css" />
+
+
+</head>
+<body class="<%= signedIn ? 'signedIn' : 'notSignedIn' %>">
+<!--[if lte IE 8]>
+<script>document.createElement("nav")</script>
+<div style="font-size: 20px; line-height: 20px; position: absolute; background: red; color: white;">Internet Explorer is not supported.
+    <br/> OPOWER recommeneds Google Chrome.
+    <br/> Seriously, you should not be using IE.
+</div>
+<![endif]-->
+
+<% if (this.session.email) { %>
+<nav class="nav clearfix">
+    <div class="nav-meta">
+        <ul>
+            <li><a href="/" style="font-weight: bold;"><%= this.session.name %></a></li>
+            <li><a href="https://wiki.opower.com/x/Epe8">Help</a></li>
+            <li><a href="/logout"">Sign out</a></li>
+        </ul>
+    </div>
+    <a href="/" class="logo"><img src="/images/logo.png" alt="Candidate Catapult" width="275" height="90" /></a>
+    <div class="tabs">
+        <div class="tabgroup">
+        <%- partial('nav') %>
+        </div>
+    </div>
+</nav>
+<div class="content">
+<% } %>
+<%- body %>
+<% if (this.session.email) { %>
+
+</div>
+<footer class="footer">
+    <div class="keys clearfix">
+
+
+        <div class="key">
+            <div>Last data grab from Jobvite: <strong><%= last_updated() ? Util.minutes(last_updated()) + ' minutes ago' : 'Unknown' %></strong>.</div>
+            <div>Next update: <strong><%= last_updated() ? Util.minutes(+last_updated() + (Constants.UPDATE_INTERVAL_MINUTES * Constants.MILLISECONDS_PER_MINUTE)) * -1 + ' minutes' : 'Unknown' %></strong>.</div>
+            <div>Data is updated every 45 minutes, or you can ask Dylan for an immediate update.</div>
+            <% if (in_progress()) { %><div><strong>Data is updating <em>right now!</em></strong></div><% } %>
+        </div>
+
+
+        <% if (locals.has_ticks) { %>
+        <div class="key clearfix">
+            <span class="tick low">0 &ndash; 10 Days</span>
+            <span class="tick medium">11  &ndash; 30 Days</span>
+            <span class="tick high"> 30 Days or More </span>
+            <div>Each dot represents a candidate who has been in that particular workflow step for the above number of days.</div>
+        </div>
+        <% } %>
+
+        <% if (locals.has_mini) { %>
+        <div class="key clearfix">
+                <div class="candidate-mini">
+                    <div class="tag color3">
+                        <span class="days">5</span>
+                    </div>
+                    <div class="mini-content color3">
+                        <div class="name employeeReferral">
+                            Candidate 1
+                        </div>
+                    </div>
+                </div>
+
+                <div class="candidate-mini employeeReferral">
+                    <div class="tag color3">
+                        <span class="days">16</span>
+                    </div>
+                    <div class="mini-content color3">
+                        <div class="name employeeReferral">
+                            Candidate 2
+                        </div>
+                    </div>
+                </div>
+
+            <div><strong>Number:</strong>  How many days the candidate has been in that workflow step.</div>
+            <div><strong>Bold Names:</strong> Candidate was referred by an OPOWER employee.</div>
+            <div><strong>Colors:</strong> Each color is a different open req.</div>
+        </div>
+        <% } %>
+
+    </div>
+
+    <div class="confidential">OPOWER CONFIDENTIAL</div>
+</footer>
+<% } %>
+
+<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.doTimeout.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.isotope.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.store.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.flextarea.js"></script>
+<script type="text/javascript" src="/js/jqueryui/js/jquery-ui-1.8.9.custom.js"></script>
+<script type="text/javascript" src="/js/datatables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/js/datatables/FixedHeader.js"></script>
+<script type="text/javascript" src="/js/datatables/ColReorder.js"></script>
+<script type="text/javascript" src="/js/catapult.js"></script>
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript" src="/js/tables.js"></script>
+<script type="text/javascript" src="/js/filtering.js"></script>
+<script type="text/javascript" src="/js/candidate.js"></script>
+<script type="text/javascript" src="/js/req.js"></script>
+
+
+<script type="text/javascript">
+<%- locals.production ? '' : '/' + '**' %>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19171856-1']);
+_gaq.push(['_trackPageview']);
+//_gaq.push(['_trackEvent', 'Users', 'User Type', 'Who']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+<%- locals.production ? '' : '**' + '/' %>
+</script>
+
+</body>
+</html>

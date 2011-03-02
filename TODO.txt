@@ -1,0 +1,23 @@
+5) * Latest Hires
+6) * Recent Referrals:
+7) Updates
+8) Assett Manager
+
+Long term
+* Iframe for wiki
+
+Email referral change details
+https://github.com/marak/node_mailer
+http://dailyjs.com/2011/02/21/node-tutorial-14
+
+* linkedin heads
+* Wiki heads
+
+ * Live update page?
+
+Tips
+* Log: /var/log/catapult.log
+* Start: sudo /etc/init.d/catapult start
+* Stop:  sudo /etc/init.d/catapult stop
+* Upgrade node:
+./configure --prefix=$HOME/local/node

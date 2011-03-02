@@ -1,0 +1,113 @@
+<!-- Who -->
+<% if (locals.job_title) { %>
+    <h2><%= job_title %></h2>
+    <h3><a href="/teams/<%- url(department_name)  %>"><%= department_name %></a></h3>
+<% } else if (locals.department_name) { %>
+    <h2><%= department_name %></h2>
+<% } else if (employee.name) { %>
+    <h2><%= employee.name %></h2>
+<% } %>
+
+
+<% Constants.STATUS_ORDER.forEach(function(value, key) {
+    if (value.owner && statuses[key].candidates.length) {
+%>
+<div class="other-swimlane">
+    <h4><%= key %></h4>
+    <div class="description">These candidates need followup.  Only you and recruiters see this.</div>
+
+    <ul class="clearfix">
+        <%- partial('candidate/mini', { collection: statuses[key].candidates.reverse(), as: 'candidate', locals: locals } ) %>
+    </ul>
+</div>
+<% }
+}) %>        
+
+<h4>Swimlanes</h4>
+<!-- Job Titles -->
+<div class="filter description clearfix">
+    <div class="titles clearfix">
+        <a href="/sources" class="button active" data-filter=":not(.employeeReferral)">
+            Show only employee referrals
+        </a>
+
+        <a href="/sources" class="button active hide-all" data-filter="">
+            Hide All Jobs
+        </a>
+    </div>
+
+
+    <div class="titles clearfix">
+        <% var i=0 %>
+        <% jobs.forEach(function(job, job_id){ %>
+            <a href="/jobs/<%=url(job.title)%>" class="color<%= ++i %> title" data-filter=".filter<%= i %>">
+
+                <%- job.title %>
+                <% if (job.status != 'Open') { %>
+                    <span class="note bad"><%= job.status %></span>
+                <% } %>
+                <% if (!job.isOpen) { %>
+                    <span class="note">Not Online</span>
+                <% } %>
+
+                <span class="x">&times;</span>
+            </a>
+        <% }); %>
+    </div>
+
+</div>
+
+<!-- What -->
+<table class="swimlanes">
+    <thead>
+        <tr>
+            <% Constants.STATUS_ORDER.forEach(function(value, key) {
+                if (!value.hide) {
+            %>
+                <th><%- value.short ? value.short : key %></th>
+            <% }
+            }) %>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% Constants.STATUS_ORDER.forEach(function(value, key) {
+                if (!value.hide) {
+            %>
+            <td>
+                <ul class="swimlane">
+                    <%- partial('candidate/mini', { collection: statuses[key].candidates, as: 'candidate', locals: locals } ) %>
+                    <li class="candidate-mini" style="visibility: hidden;">--------------------------</li>
+                </ul>
+            </td>
+
+            <% }
+            }) %>
+
+        </tr>
+    </tbody>
+</table>
+
+
+<% Constants.STATUS_ORDER.forEach(function(value, key) {
+    if (value.hired && statuses[key].candidates.length) {
+%>
+<div class="other-swimlane">
+    <h4><%= value.long || key %></h4>
+    <div class="description">The number shows long may days ago the person accepted their job here.</div>
+
+    <ul class="clearfix">
+        <%- partial('candidate/mini', { collection: statuses[key].candidates.reverse(), as: 'candidate', locals: locals } ) %>
+    </ul>
+</div>
+<% }
+}) %>
+
+
+
+<div class="candidate-hover-details">
+    <div class="candidate-hover-details-content">
+    </div>
+</div>
+
+<% has_mini = true %>

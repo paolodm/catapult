@@ -1,0 +1,22 @@
+<% var current_url = this.url %>
+<% var on_home_page = (current_url === this.session.home_page) %>
+<% var nav_items = [
+        { url: '/referrals', label: 'Your Referrals'},
+        { url: '/sources', label: 'Sources'},
+        { url: '/recruiters', label: 'Recruiters'},
+        { url: '/managers', label: 'Managers'},
+        { url: '/teams', label: 'Teams'},
+        { url: '/jobs', label: 'Jobs'},
+        { url: '/req', label: 'New Req'}
+   ] %>
+<% if (this.session && this.session.home_page) {
+      nav_items.unshift(  { url: this.session.home_page, label: 'Your Candidates', home: true} );
+     } %>
+<% nav_items.forEach(function(nav, i) {
+%>
+<%- i > 0 ? ' ' : ''%><a class="nav-item<%=
+            (nav.home && on_home_page)
+            || (current_url.indexOf(nav.url) == 0 && !on_home_page)
+                        ? ' active' : ''
+                        %>" href="<%= nav.url ? nav.url : '' %>"><span><%=nav.label%></span></a>
+<% }) %>

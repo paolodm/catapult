@@ -1,0 +1,19 @@
+<tr>
+    <td class="wrap">
+        <% if (options.source_type && options.source_type=='employee-referrals') { %>
+            <a href="/search/<%= url(source.name) %>"><%= source.name %></a>
+        <% } else if (options.source_type) { %>
+            <%- source.name %>
+        <% } else { %>
+            <a href="/sources/<%- url(source.name) + (options.when ? '?when=' + url(options.when) : '') %>"><%= source.name %></a>
+        <% } %>
+    </td>
+    <td><%= source.count_candidates %></td>
+    <td class="bad"><%= source.count_rejected %></td>
+    <td class="good"><%= source.count_hired %></td>
+    <td><%= source.count_active %></td>
+
+    <%- partial('ticks/status.ejs', { locals:  { statuses: source.statuses } }) %>
+
+
+</tr>
