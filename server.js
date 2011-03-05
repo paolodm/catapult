@@ -5,13 +5,10 @@
 require('proto');
 
 var log = require('logging').from(__filename),
-    //MemoryStore = require('connect').session.MemoryStore,
     Express = require('express'),
     Server = module.exports = Express.createServer();
 
-
 var Controller = require('./lib/controller');
-
 
 var VIEWS = __dirname + '/views',
     PUBLIC = __dirname + '/public',
@@ -21,16 +18,15 @@ if (process.platform != 'darwin' && process.platform != 'cygwin') {
     log('Platform:', process.platform);
     Server.set('env', 'production');
 }
+
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'catapult';
 
 process.addListener('uncaughtException', function (err, stack) {
-    log('*************************************');
-    log('************EXCEPTION****************');
-    log('*************************************');
+    log('++++++++++++EXCEPTION++++++++++++');
     err.message && log(err.message);
     err.stack && log(err.stack);
-    log('*************************************');
+    log('+++++++++++++++++++++++++++++++++');
 });
 
 function production(){
@@ -39,14 +35,10 @@ function production(){
     //Server.use(Express.gzip());
 
     PORT = 8000;
-
     log('running in production mode');
-
-    Server.helpers({
+    Server.locals({
         production: true
     });
-
-
 }
 
 function development() {
@@ -54,7 +46,7 @@ function development() {
     //Server.use(Express.cache());
     //Server.use(Express.gzip());
 
-    Server.helpers({
+    Server.locals({
         development: true
     });
  
@@ -65,7 +57,7 @@ function development() {
 function common() {
     Server.set('views', VIEWS);
 
-    Server.helpers({
+    Server.locals({
         log: log
     });
 
@@ -83,29 +75,20 @@ function common() {
     Server.use(Server.router);
 }
 
-
 Server.configure('development', development);
 Server.configure('production', production);
 Server.configure(common);
 
 Server.error(function(err, req, res, next){
-        if (err.message != 'EISDIR, Is a directory') {
-            log('*************************************');
-            log('****************ERROR****************');
-            log('*************************************');
-            log('http://' + req.headers.host + req.url);
-            err.message && log(err.message);
-            err.arguments && log(err.arguments);
-            err.stack && log(err.stack);
-            log('*************************************');
-        }
-        if (Server.get('env') == 'production') {
-            res.redirect('/');
-        } else {
-            
-            res.end();
-            //res.render('error.ejs', { locals: { title: 'Error', message: err.message, object: false } });
-        }
+    log('****************ERROR****************');
+    log('http://' + req.headers.host + req.url);
+    err.message && log(err.message);
+    err.arguments && log(err.arguments);
+    err.stack && log(err.stack);
+    log('*************************************');
+    if (Server.get('env') == 'production') {
+        res.redirect('/');
+    }
 });
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
@@ -134,7 +117,6 @@ Server.get('/*', function(req, res){
         res.redirect(new_url);
     }
 });
-
 
 Server.listen(PORT, null);
 log('Starting Catapult on', PORT);
