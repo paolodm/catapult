@@ -1,1 +1,0 @@
-<%- indexInCollection > 0 ? ', ' : '' %><a href="/managers/<%- url(manager) %>"><%- manager %></a>
