@@ -73,18 +73,18 @@
             case Constants.PAGE_TYPE.managers:
             case Constants.PAGE_TYPE.teams:
             %><%-
-                partial('table/employee.ejs', { collection: collection, locals: locals })
+                partial('table/employee')
             %><%
                 break;
             case Constants.PAGE_TYPE.sources:
             case Constants.PAGE_TYPE.source:
             %><%-
-                partial('table/source.ejs', { collection: collection, locals:  locals })
+                partial('table/source')
             %><%
                 break;
             case Constants.PAGE_TYPE.jobs:
             %><%-
-                partial('table/job.ejs', { collection: collection, locals: locals })
+                partial('table/job')
             %><%
                 break;
             default:

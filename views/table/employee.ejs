@@ -7,5 +7,6 @@
     <td><%= employee.count_candidates %></td>
     <td><%= employee.count_jobs %></td>
 
-    <%- partial('ticks/status.ejs', { locals:  { statuses: employee.statuses } }) %>
+    <%- partial('../ticks/status', {object: employee.statuses, as: 'statuses'}) %>
+
 </tr>

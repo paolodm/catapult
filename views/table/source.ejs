@@ -13,7 +13,7 @@
     <td class="good"><%= source.count_hired %></td>
     <td><%= source.count_active %></td>
 
-    <%- partial('ticks/status.ejs', { locals:  { statuses: source.statuses } }) %>
+    <%- partial('../ticks/status', {object: source.statuses, as: 'statuses'}) %>
 
 
 </tr>

@@ -15,6 +15,6 @@
         <% } %>
     </td>
     <td><%- candidate.source %> <a href="/sources/<%-url(candidate.source_type) %>"><%= candidate.source_type %></a></td>
-    <td><%- job && job.title != 'Athlete Pool' && job.recruiters && job.recruiters[0] && partial('referrals/recruiter', { collection: job.recruiters, as: 'recruiter' }) || '' %></td>
-    <td><%- job && job.title != 'Athlete Pool' && job.managers && job.managers[0] && partial('referrals/manager', { collection: job.managers, as: 'manager' }) || '' %></td>
+    <td><%- job && job.title != 'Athlete Pool' && job.recruiters && job.recruiters[0] && partial('recruiter', { collection: job.recruiters, as: 'recruiter' }) || '' %></td>
+    <td><%- job && job.title != 'Athlete Pool' && job.managers && job.managers[0] && partial('manager', { collection: job.managers, as: 'manager' }) || '' %></td>
 </tr>

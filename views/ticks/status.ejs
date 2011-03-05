@@ -1,0 +1,16 @@
+<% Constants.STATUS_ORDER.forEach(function(value, key) {
+    if (!value.hide) {
+        var count = statuses[key].count_low + statuses[key].count_medium + statuses[key].count_high;
+%>
+    <td data-sort-value="<%= count  %>"  class="ticks">
+        <div>
+        <%- (new Array((statuses[key].count_low || 0) + 1)).join('<span class="low tick"></span> ') %>
+        <%- (new Array((statuses[key].count_medium || 0) + 1)).join('<span class="medium tick"></span> ') %>
+        <%- (new Array((statuses[key].count_high || 0) + 1)).join('<span class="high tick"></span> ') %>
+        <% if (count > 0) { %>
+            <span class="tick-count"><%= count %></span>
+        <% } %>
+        </div>
+    </td>
+<% }
+}); %>

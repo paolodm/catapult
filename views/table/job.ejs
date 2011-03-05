@@ -1,0 +1,21 @@
+<tr>
+    <td>
+        <a href="/jobs/<%= url(job.title) %>"><%= job.title %></a>
+    </td>
+    <td class="<%= job.count_candidates === 0 ? 'bad' : '' %>"><%= job.count_candidates %></td>
+    <td>
+        <%= job.location == 'San Francisco' ? 'SF' : job.location == 'Arlington' ? 'DC' : job.location || '???' %>
+    </td>
+    <td>
+        <%- job.status == 'Open' ? 'Open' : '<span class="bad">' + job.status + '</span>' %>
+    </td>
+    <td>
+        <% if (job.isOpen && job.status == 'Open') { %>
+            <a href="http://opowerjobs.com/<%= job.id %>">opowerjobs</a>
+        <% } else {  %>
+            <span class="bad">Not Online</span>
+        <% } %>
+    </td>
+    <%- partial('../ticks/status', {object: job.statuses, as: 'statuses'}) %>
+
+</tr>

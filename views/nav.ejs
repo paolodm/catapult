@@ -1,5 +1,4 @@
-<% var current_url = this.url %>
-<% var on_home_page = (current_url === this.session.home_page) %>
+<% var on_home_page = (current_url === session.home_page) %>
 <% var nav_items = [
         { url: '/referrals', label: 'Your Referrals'},
         { url: '/sources', label: 'Sources'},
@@ -9,8 +8,8 @@
         { url: '/jobs', label: 'Jobs'},
         { url: '/req', label: 'New Req'}
    ] %>
-<% if (this.session && this.session.home_page) {
-      nav_items.unshift(  { url: this.session.home_page, label: 'Your Candidates', home: true} );
+<% if (session.home_page) {
+      nav_items.unshift(  { url: session.home_page, label: 'Your Candidates', home: true} );
      } %>
 <% nav_items.forEach(function(nav, i) {
 %>

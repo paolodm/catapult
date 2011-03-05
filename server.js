@@ -5,7 +5,7 @@
 require('proto');
 
 var log = require('logging').from(__filename),
-    MemoryStore = require('connect').session.MemoryStore,
+    //MemoryStore = require('connect').session.MemoryStore,
     Express = require('express'),
     Server = module.exports = Express.createServer();
 
@@ -34,9 +34,9 @@ process.addListener('uncaughtException', function (err, stack) {
 });
 
 function production(){
-    Server.use(Express.conditionalGet());
-    Server.use(Express.cache());
-    Server.use(Express.gzip());
+    //Server.use(Express.conditionalGet());
+    //Server.use(Express.cache());
+    //Server.use(Express.gzip());
 
     PORT = 8000;
 
@@ -50,9 +50,9 @@ function production(){
 }
 
 function development() {
-    Server.use(Express.conditionalGet());
-    Server.use(Express.cache());
-    Server.use(Express.gzip());
+    //Server.use(Express.conditionalGet());
+    //Server.use(Express.cache());
+    //Server.use(Express.gzip());
 
     Server.helpers({
         development: true
@@ -75,11 +75,11 @@ function common() {
         }
     });
 
-    Server.use(Express.cookieDecoder());
-    Server.use(Express.session({ store: new MemoryStore({ reapInterval: 100 /* 60000 * 10 */ }), secret: 'catapult' }));
-    Server.use(Express.bodyDecoder());
+    Server.use(Express.cookieParser());
+    Server.use(Express.session({ secret: 'catapult' }));
+    Server.use(Express.bodyParser());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
-    Server.use(Express.staticProvider(PUBLIC));
+    Server.use(Express.static(PUBLIC));
     Server.use(Server.router);
 }
 

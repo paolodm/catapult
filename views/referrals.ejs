@@ -7,13 +7,13 @@
     <input class="query" name="q" id="q" value="<%= locals.query || '' %>" placeholder="Your name or candidate's name" />
     <label for="q"><a href="/search" class="button "><span class="icon magnifying-glass"></span>Search</a></label>
     <input type="submit" class="hidden" value="Search" />
-    <% if (query) { %>
+    <% if (locals.query) { %>
     <span><%= results.candidates.length %> Records Found</span>
     <% } %>
 
 </form>
 </div>
-<% if (query) { %>
+<% if (locals.query) { %>
 
 <table class="datatable candidates" data-sort-column="1" data-sort-direction="desc">
 
@@ -28,7 +28,7 @@
             </tr>
     </thead>
     <tbody>
-        <%- partial('referrals/candidate.ejs', { collection: results.candidates, as: 'candidate', locals: { jobs: results.jobs } }) %>
+        <%- partial('referrals/candidate.ejs', { collection: results.candidates, as: 'candidate',  jobs: results.jobs }) %>
     </tbody>
 </table>
 

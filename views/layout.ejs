@@ -20,35 +20,56 @@
 
 
 </head>
+
 <body class="<%= signedIn ? 'signedIn' : 'notSignedIn' %>">
 <!--[if lte IE 8]>
 <script>document.createElement("nav")</script>
 <div style="font-size: 20px; line-height: 20px; position: absolute; background: red; color: white;">Internet Explorer is not supported.
-    <br/> OPOWER recommeneds Google Chrome.
+    <br/> OPOWER recommends Google Chrome.
     <br/> Seriously, you should not be using IE.
 </div>
 <![endif]-->
 
-<% if (this.session.email) { %>
+<% if (session.email) { %>
 <nav class="nav clearfix">
     <div class="nav-meta">
         <ul>
-            <li><a href="/" style="font-weight: bold;"><%= this.session.name %></a></li>
+            <li><a href="/" style="font-weight: bold;"><%= session.name %></a></li>
             <li><a href="https://wiki.opower.com/x/Epe8">Help</a></li>
-            <li><a href="/logout"">Sign out</a></li>
+            <li><a href="/logout">Sign out</a></li>
         </ul>
     </div>
     <a href="/" class="logo"><img src="/images/logo.png" alt="Candidate Catapult" width="275" height="90" /></a>
     <div class="tabs">
         <div class="tabgroup">
-        <%- partial('nav') %>
+            <% var on_home_page = (current_url === session.home_page) %>
+            <% var nav_items = [
+                    { url: '/referrals', label: 'Your Referrals'},
+                    { url: '/sources', label: 'Sources'},
+                    { url: '/recruiters', label: 'Recruiters'},
+                    { url: '/managers', label: 'Managers'},
+                    { url: '/teams', label: 'Teams'},
+                    { url: '/jobs', label: 'Jobs'},
+                    { url: '/req', label: 'New Req'}
+               ] %>
+            <% if (session.home_page) {
+                  nav_items.unshift(  { url: session.home_page, label: 'Your Candidates', home: true} );
+                 } %>
+            <% nav_items.forEach(function(nav, i) {
+            %>
+            <%- i > 0 ? ' ' : ''%><a class="nav-item<%=
+                        (nav.home && on_home_page)
+                        || (current_url.indexOf(nav.url) == 0 && !on_home_page)
+                                    ? ' active' : ''
+                                    %>" href="<%= nav.url ? nav.url : '' %>"><span><%=nav.label%></span></a>
+            <% }) %>
         </div>
     </div>
 </nav>
 <div class="content">
 <% } %>
 <%- body %>
-<% if (this.session.email) { %>
+<% if (session.email) { %>
 
 </div>
 <footer class="footer">
