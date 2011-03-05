@@ -77,10 +77,10 @@
 
 
         <div class="key">
-            <div>Last data grab from Jobvite: <strong><%= last_updated() ? Util.minutes(last_updated()) + ' minutes ago' : 'Unknown' %></strong>.</div>
-            <div>Next update: <strong><%= last_updated() ? Util.minutes(+last_updated() + (Constants.UPDATE_INTERVAL_MINUTES * Constants.MILLISECONDS_PER_MINUTE)) * -1 + ' minutes' : 'Unknown' %></strong>.</div>
+            <div>Last data grab from Jobvite: <strong><%= last_updated ? Util.minutes(last_updated) + ' minutes ago' : 'Unknown' %></strong>.</div>
+            <div>Next update: <strong><%= last_updated ? Util.minutes(+last_updated + (Constants.UPDATE_INTERVAL_MINUTES * Constants.MILLISECONDS_PER_MINUTE)) * -1 + ' minutes' : 'Unknown' %></strong>.</div>
             <div>Data is updated every 45 minutes, or you can ask Dylan for an immediate update.</div>
-            <% if (in_progress()) { %><div><strong>Data is updating <em>right now!</em></strong></div><% } %>
+            <% if (in_progress) { %><div><strong>Data is updating <em>right now!</em></strong></div><% } %>
         </div>
 
 
