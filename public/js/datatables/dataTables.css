@@ -34,8 +34,6 @@
 	position: relative;
 	min-height: 200px;
 	clear: both;
-	_height: 302px;
-	zoom: 1; /* Feeling sorry for IE */
 }
 
 .dataTables_processing {
@@ -72,7 +70,6 @@
 
 .dataTables_paginate {
 	width: 44px;
-	* width: 50px;
 	float: right;
 	text-align: right;
 }
@@ -86,19 +83,19 @@
 }
 
 .paginate_disabled_previous {
-	background-image: url('/images/back_disabled.jpg');
+	background-image: url(/images/back_disabled.jpg);
 }
 
 .paginate_enabled_previous {
-	background-image: url('/images/back_enabled.jpg');
+	background-image: url(/images/back_enabled.jpg);
 }
 
 .paginate_disabled_next {
-	background-image: url('/images/forward_disabled.jpg');
+	background-image: url(/images/forward_disabled.jpg);
 }
 
 .paginate_enabled_next {
-	background-image: url('/images/forward_enabled.jpg');
+	background-image: url(/images/forward_enabled.jpg);
 }
 
 
@@ -130,7 +127,6 @@ table.display thead th {
 	border-bottom: 1px solid black;
 	font-weight: bold;
 	cursor: pointer;
-	* cursor: hand;
 }
 
 table.display tfoot th {
@@ -158,23 +154,23 @@ table.display td.center {
  */
 
 .sorting_asc {
-	background: url('/images/sort_asc.png') no-repeat center right;
+	background: url(/images/sort_asc.png) no-repeat center right;
 }
 
 .sorting_desc {
-	background: url('/images/sort_desc.png') no-repeat center right;
+	background: url(/images/sort_desc.png) no-repeat center right;
 }
 
 .sorting {
-	background: url('/images/sort_both.png') no-repeat center right;
+	background: url(/images/sort_both.png) no-repeat center right;
 }
 
 .sorting_asc_disabled {
-	background: url('/images/sort_asc_disabled.png') no-repeat center right;
+	background: url(/images/sort_asc_disabled.png) no-repeat center right;
 }
 
 .sorting_desc_disabled {
-	background: url('/images/sort_desc_disabled.png') no-repeat center right;
+	background: url(/images/sort_desc_disabled.png) no-repeat center right;
 }
 
 
@@ -236,10 +232,6 @@ tr.even {
 	clear: both;
 }
 
-.dataTables_scrollBody {
-	*margin-top: -1px;
-}
-
 .top, .bottom {
 	padding: 15px;
 	background-color: #F5F5F5;
@@ -298,7 +290,6 @@ td.details {
 	padding: 2px 5px;
 	margin: 0 3px;
 	cursor: pointer;
-	*cursor: hand;
 }
 
 .paging_full_numbers span.paginate_button {

@@ -5,19 +5,8 @@
     <title>Candidate Catapult<%= locals.page_title ? ' - ' + page_title : '' %></title>
 
     <link rel="alternate" type="application/atom+xml" title="OPOWER Jobs Feed" href="http://opowerjobs.com/atom.xml" />
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/base.css" />
-    <link rel="stylesheet" type="text/css" href="/js/datatables/dataTables.css" />
-    <link rel="stylesheet" type="text/css" href="/css/css3buttons/css3buttons.css" />
-    <link rel="stylesheet" type="text/css" href="/css/isotope.css" />
 
-    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
-    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
-    <link rel="stylesheet" type="text/css" href="/css/colors.css" />
-    <link rel="stylesheet" type="text/css" href="/css/swimlanes.css" />
-    <link rel="stylesheet" type="text/css" href="/css/candidate.css" />
-    <link rel="stylesheet" type="text/css" href="/css/req.css" />
-
+    <%- styles() %>
 
 </head>
 
@@ -129,21 +118,7 @@
 </footer>
 <% } %>
 
-<script type="text/javascript" src="/js/jquery/jquery.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.doTimeout.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.isotope.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.store.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.flextarea.js"></script>
-<script type="text/javascript" src="/js/jqueryui/js/jquery-ui-1.8.9.custom.js"></script>
-<script type="text/javascript" src="/js/datatables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/js/datatables/FixedHeader.js"></script>
-<script type="text/javascript" src="/js/datatables/ColReorder.js"></script>
-<script type="text/javascript" src="/js/catapult.js"></script>
-<script type="text/javascript" src="/js/search.js"></script>
-<script type="text/javascript" src="/js/tables.js"></script>
-<script type="text/javascript" src="/js/filtering.js"></script>
-<script type="text/javascript" src="/js/candidate.js"></script>
-<script type="text/javascript" src="/js/req.js"></script>
+<%- scripts() %>
 
 
 <script type="text/javascript">

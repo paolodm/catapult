@@ -1,5 +1,5 @@
-**
- * HTML5 ? Boilerplate
+/*!
+ * HTML5 Boilerplate
  *
  * style.css contains a reset, font normalization and some base styles.
  *
@@ -8,11 +8,8 @@
  * - yui.yahooapis.com/2.8.1/build/base/base.css
  * - camendesign.com/design/
  * - praegnanz.de/weblog/htmlcssjs-kickstart
- */
-
-
-/**
- * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ *
+ * html5doctor.com Reset Stylesheet (Eric Meyer Reset Reloaded + HTML5 baseline)
  * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
  * html5doctor.com/html-5-reset-stylesheet/
  */

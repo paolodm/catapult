@@ -8,6 +8,7 @@ var log = require('logging').from(__filename),
     Express = require('express'),
     Server = module.exports = Express.createServer();
 
+var Assets = require('./lib/assets');
 var Controller = require('./lib/controller');
 
 var VIEWS = __dirname + '/views',
@@ -96,10 +97,12 @@ Server.get(/^.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
+Server.locals(Assets);
+Server.use(Assets.handler());
 Controller.addHandlers({Server: Server});
 
 // Required for 404's to return something
-Server.get('/*', function(req, res){
+Server.get('/zzz*', function(req, res){
     var new_url,
         extension = req.url.match(/\....$/);
 
