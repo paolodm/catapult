@@ -97,8 +97,7 @@ Server.get(/^.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
-Server.locals(Assets);
-Server.use(Assets.handler());
+Assets.addHandler({Server: Server});
 Controller.addHandlers({Server: Server});
 
 // Required for 404's to return something

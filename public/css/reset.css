@@ -9,7 +9,7 @@
  * - camendesign.com/design/
  * - praegnanz.de/weblog/htmlcssjs-kickstart
  *
- * html5doctor.com Reset Stylesheet (Eric Meyer Reset Reloaded + HTML5 baseline)
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
  * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
  * html5doctor.com/html-5-reset-stylesheet/
  */
@@ -23,11 +23,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
