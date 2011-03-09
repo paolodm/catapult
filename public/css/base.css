@@ -51,9 +51,8 @@ h4 {
 
 }
 
-.diag-bg {
-    background-image: url(/css/images/diag.png);
-    background-repeat: repeat;
+.align-right {
+    text-align: right;
 }
 
 
@@ -146,7 +145,10 @@ h4 {
     color: #000;
 }
 
-
+.note.location {
+    background: rgba(91, 16, 16, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
 
 th {
     text-align: left;

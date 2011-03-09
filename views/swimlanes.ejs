@@ -43,6 +43,12 @@
             <a href="/jobs/<%=url(job.title)%>" class="color<%= ++i %> title" data-filter=".filter<%= i %>">
 
                 <%- job.title %>
+                <% if (job.location != 'Arlington') { %>
+                    <span class="note location"><%= job.location == 'San Francisco' ? 'SF' : job.location %></span>
+                <% } %>
+
+
+
                 <% if (job.status != 'Open') { %>
                     <span class="note bad"><%= job.status %></span>
                 <% } %>

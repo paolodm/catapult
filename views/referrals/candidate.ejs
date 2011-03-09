@@ -1,12 +1,15 @@
 <% var job = jobs[candidate.job_id] %>
 <tr>
     <td><a href="/search/<%- url(candidate.name) %>"><%= candidate.name %></a></td>
-    <td data-sort-value="<%= candidate.date %>">
+    <td>
         <% if (true || candidate.displayStatus) { %>
-        <span class="<%= candidate.status=='Rejected' ? 'bad' : 'good' %>"><%= candidate.status %></span> on <%= candidate.date_short %>
+        <span class="<%= candidate.status=='Rejected' ? 'bad' : 'good' %>"><%= candidate.status %></span>
         <% } else { %>
-        Ask Recruiter, <%= candidate.date_short %>
+        Ask Recruiter
         <% } %>
+    </td>
+    <td data-sort-value="<%= candidate.date %>" class="align-right">
+        <%= candidate.date_short %>
     </td>
     <td>
         <% if (job) { %>
