@@ -18,6 +18,16 @@
     font-weight: bold;
 }
 
+.referral {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.3);
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+}
+
 /* Tag */
 
 
@@ -143,11 +153,9 @@
 
 .candidate-hover-details .source-employee {
     background: #FFCE00;
-    padding: 0 10px 10px;
-    margin-bottom: -10px;
-}
-.candidate-hover-details .source-employee .smaller {
-    font-weight: bold;
-    font-size: 12px;
+    padding: 10px 5px;
 }
 
+.candidate-hover-details .button {
+    font-size: 9px;
+}
