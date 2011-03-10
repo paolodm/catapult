@@ -19,7 +19,10 @@ $(document).ready(function(){
         $('.name').highlight( $q.val() );
     }
 
-    $('.highlight').addClass('pop');
+    $('.search-link').bind('click', function(){
+        $q.val('').focus();
+        return false;
+    });
 
 
     $('.color0 .candidate-hover-details-content').noisy({

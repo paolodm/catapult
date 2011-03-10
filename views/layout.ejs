@@ -23,13 +23,15 @@
 <nav class="nav clearfix">
     <div class="nav-meta">
         <ul>
-            <% if (page_type != Constants.PAGE_TYPE.search) { %>
             <li>
+            <% if (page_type != Constants.PAGE_TYPE.search) { %>
                 <form class="search" action="/search" method="get">
                     <input class="query" name="q" id="q" value="<%= locals.query || '' %>" placeholder="Find somebody" />
                 </form>
-            </li>
+            <% } else { %>
+                <a href="/search" class="search-link">Search</a>
             <% } %>
+            </li>
             <li><a href="/" style="font-weight: bold;"><%= session.name %></a></li>
             <li><a href="https://wiki.opower.com/x/Epe8">Help</a></li>
             <li><a href="/logout">Sign out</a></li>
@@ -102,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="candidate-mini employeeReferral">
+                <div class="candidate-mini employeeReferral" style="margin-left: 10px;">
                     <div class="tag color3">
                         <span class="days">16</span>
                     </div>
