@@ -14,4 +14,19 @@ $(document).ready(function(){
     $('.search .button').click(submit);
 
     $('.search').submit(submit);
+
+    if ($q.val()) {
+        $('.name').highlight( $q.val() );
+    }
+
+    $('.highlight').addClass('pop');
+
+
+    $('.color0 .candidate-hover-details-content').noisy({
+        'intensity' : 1,
+        'size' : 200,
+        'opacity' : 0.123,
+        'fallback' : '',
+        'monochrome' : false
+    });
 });

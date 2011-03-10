@@ -23,6 +23,13 @@
 <nav class="nav clearfix">
     <div class="nav-meta">
         <ul>
+            <% if (page_type != Constants.PAGE_TYPE.search) { %>
+            <li>
+                <form class="search" action="/search" method="get">
+                    <input class="query" name="q" id="q" value="<%= locals.query || '' %>" placeholder="Find somebody" />
+                </form>
+            </li>
+            <% } %>
             <li><a href="/" style="font-weight: bold;"><%= session.name %></a></li>
             <li><a href="https://wiki.opower.com/x/Epe8">Help</a></li>
             <li><a href="/logout">Sign out</a></li>
@@ -90,7 +97,7 @@
                     </div>
                     <div class="mini-content color3">
                         <div class="name employeeReferral">
-                            Candidate 1
+                            Typical Candidate
                         </div>
                     </div>
                 </div>
@@ -100,14 +107,15 @@
                         <span class="days">16</span>
                     </div>
                     <div class="mini-content color3">
+                        <div class="referral">&#9733;</div>
                         <div class="name employeeReferral">
-                            Candidate 2
+                            Referred by Employee
                         </div>
                     </div>
                 </div>
 
             <div><strong>Number:</strong>  How many days the candidate has been in that workflow step.</div>
-            <div><strong>Bold Names:</strong> Candidate was referred by an OPOWER employee.</div>
+            <div><strong>Bold Names &amp; Star:</strong> Candidate was referred by an OPOWER employee.</div>
             <div><strong>Colors:</strong> Each color is a different open req.</div>
         </div>
         <% } %>

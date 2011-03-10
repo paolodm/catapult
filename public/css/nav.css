@@ -95,6 +95,10 @@ input[type=text] {
     line-height: 1;
 }
 
+.footer {
+    background: #333;
+}
+
 .key {
     float: left;
     padding: 10px;

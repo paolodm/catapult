@@ -2,9 +2,16 @@ $(document).ready(function(){
 
 
     $('.swimlane').isotope({
-      itemSelector : '.candidate-mini',
-      layoutMode : 'straightDown'
+        itemSelector : '.candidate-mini',
+        layoutMode : 'straightDown'
     });
+
+    $('.search-results').isotope({
+        itemSelector : '.result',
+        layoutMode : 'fitRows'
+
+    });
+
 
 
     function hide_title() {

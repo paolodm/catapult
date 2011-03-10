@@ -1,0 +1,8 @@
+<% var color = (Object.keys(jobs).indexOf(candidate.job_id) || 0) + 1 %>
+<li class="result no-bullets">
+<div class="candidate-hover-details color<%= color %>" >
+    <div class="candidate-hover-details-content">
+        <%- partial('details') %>
+    </div>
+</div>
+</li>

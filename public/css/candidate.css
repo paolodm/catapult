@@ -13,6 +13,10 @@
     display: none;
 }
 
+.search-results .candidate-mini .details {
+    display: block;
+}
+
 
 .candidate-mini.employeeReferral .name {
     font-weight: bold;
@@ -109,8 +113,8 @@
 }
 
 .candidate-hover-details {
-    background: #e2b464;
-    border: 2px solid #ffffff;
+    padding: 2px;
+    margin-bottom: 4px;
     position: absolute;
     left: -1000px;
     width: 300px;
@@ -118,6 +122,16 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+
+.search-results .candidate-hover-details  {
+    position: relative;
+    left: auto;
+    
+}
+
+.search-results .candidate-hover-details.color0 {
+    background-color: #777;
 }
 
 .candidate-hover-details-content {
@@ -139,6 +153,7 @@
     border-top: 1px solid #ccc;
     margin-top: 10px;
     padding-top: 5px;
+
 }
 
 .candidate-hover-details h3 {

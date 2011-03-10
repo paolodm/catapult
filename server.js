@@ -22,14 +22,14 @@ if (process.platform != 'darwin' && process.platform != 'cygwin') {
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'catapult';
-
+/*
 process.addListener('uncaughtException', function (err, stack) {
     log('++++++++++++EXCEPTION++++++++++++');
     err.message && log(err.message);
     err.stack && log(err.stack);
     log('+++++++++++++++++++++++++++++++++');
 });
-
+*/
 function production(){
     //Server.use(Express.conditionalGet());
     //Server.use(Express.cache());
@@ -80,6 +80,7 @@ Server.configure('development', development);
 Server.configure('production', production);
 Server.configure(common);
 
+
 Server.error(function(err, req, res, next){
     log('****************ERROR****************');
     log('http://' + req.headers.host + req.url);
@@ -87,9 +88,6 @@ Server.error(function(err, req, res, next){
     err.arguments && log(err.arguments);
     err.stack && log(err.stack);
     log('*************************************');
-    if (Server.get('env') == 'production') {
-        res.redirect('/');
-    }
 });
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
@@ -101,7 +99,7 @@ Assets.addHandler({Server: Server});
 Controller.addHandlers({Server: Server});
 
 // Required for 404's to return something
-Server.get('/zzz*', function(req, res){
+Server.get('/*', function(req, res){
     var new_url,
         extension = req.url.match(/\....$/);
 

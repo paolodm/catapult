@@ -1,5 +1,7 @@
 <!-- Who -->
-<% if (locals.job_title) { %>
+<% if (page_type == Constants.PAGE_TYPE.search) { %>
+    <h2>Search for: <%= query %></h2>
+<% } else if (locals.job_title) { %>
     <h2><%= job_title %></h2>
     <h3><a href="/teams/<%- url(department_name)  %>"><%= department_name %></a></h3>
 <% } else if (locals.department_name) { %>
@@ -68,7 +70,7 @@
     <thead>
         <tr>
             <% Constants.STATUS_ORDER.forEach(function(value, key) {
-                if (!value.hide) {
+                if (page_type != Constants.PAGE_TYPE.search && !value.hide || page_type == Constants.PAGE_TYPE.search) {
             %>
                 <th><%- value.short ? value.short : key %></th>
             <% }
@@ -78,7 +80,7 @@
     <tbody>
         <tr>
             <% Constants.STATUS_ORDER.forEach(function(value, key) {
-                if (!value.hide) {
+                if (page_type != Constants.PAGE_TYPE.search && !value.hide || page_type == Constants.PAGE_TYPE.search) {
             %>
             <td>
                 <ul class="swimlane">

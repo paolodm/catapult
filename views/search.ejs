@@ -1,0 +1,25 @@
+<h2>Search for: <%= query %></h2>
+
+<form class="search" action="/search" method="get">
+    Find: <input class="query" name="q" id="q" value="<%= locals.query || '' %>" placeholder="Find somebody" />
+</form>
+
+<h3>Active &amp; Hired Candidates</h3>
+<% if (candidates.length) { %>
+    <ul class="search-results active">
+        <%- partial('candidate/search-results', { collection: candidates, as: 'candidate' } ) %>
+    </ul>
+<% } else { %>
+    Nobody to show.
+<% }  %>
+
+<h3>Rejected Candidates</h3>
+<% if (rejected.length) { %>
+    <ul class="search-results rejected-candidates">
+        <%- partial('candidate/search-results', { collection: rejected, as: 'candidate' } ) %>
+    </ul>
+<% } else { %>
+    Nobody to show.
+<% }  %>
+
+<% has_mini = true %>

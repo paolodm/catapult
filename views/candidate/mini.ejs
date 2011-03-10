@@ -1,4 +1,3 @@
-<% var job = jobs[candidate.job_id] || extra_jobs[candidate.job_id] %>
 <% var color = (Object.keys(jobs).indexOf(candidate.job_id) || 0) + 1 %>
 
 <li class="candidate-mini filter<%= color %> <%= candidate.source_type == 'Employee Referrals' ? 'employeeReferral' : '' %> <%= candidate.group %>">
@@ -15,58 +14,6 @@
             <%= candidate.name %>
         </div>
     </div>
-
-    <div class="details">
-        <h3 class="name"><strong><%= candidate.name %></strong></h3>
-        <div class="days <%= candidate.group %> smaller"><%= candidate.status %> <%= candidate.days %> days ago (<%= candidate.date_short %>)</div>
-
-        <div class="title section">
-            <a href="/jobs/<%- url(job.title) %>"><%= job.title %></a>
-            <div class="team smaller">
-                <a class="team" href="/teams/<%- url(job.department) %>"><%= job.department %> - <%= job.location %></a>
-            </div>
-        </div>
-
-        <div class="hiring section section-title">Search for <%= candidate.name %></div>
-        <div class="smaller">
-            <a target="_blank" class="button" href="https://hire.jobvite.com/Hiring/ViewCandidate.aspx?a=<%- encodeURI(candidate.id) %>">Jobvite</a>
-            <a target="_blank" class="button" href="http://www.linkedin.com/commonSearch?type=people&keywords=<%= candidate.name %>">LinkedIn</a>
-            <a target="_blank" class="button" href="http://www.google.com/search?q=<%- encodeURI(candidate.name) %>">Google</a>
-            <a target="_blank" class="button" href="http://www.facebook.com/search.php?q=<%- encodeURI(candidate.name) %>">Facebook</a>
-        </div>
-
-        <div class="source section section-title">Source</div>
-        <div class="<%= (candidate.source_type == 'Employee Referrals') ? ' source-employee' : '' %> relative">
-            <% if (candidate.source_type =='Employee Referrals') { %>
-                <div class="referral">&#9733;</div>
-            <% } %>
-
-            <%- candidate.source || candidate.source_type %>
-        </div>
-
-        <div class="columns clearfix">
-            <div class="col1">
-                <div class="hiring section">Hiring Managers</div>
-                    <% if (job.managers && job.managers.length > 0) {  %>
-                    <ul class="smaller">
-                        <li><%- job.managers.join('</li><li>') %></li>
-                    </ul>
-                    <% } else { %>
-                    <strong class='bad'>No Hiring Manger</strong>
-                    <% } %>
-                </div>
-            <div class="col2">
-                <div class="recruiters section">Recruiters</div>
-                <% if (job.recruiters && job.recruiters.length > 0) { %>
-                <ul  class="smaller">
-                    <li><%- job.recruiters.join('</li><li>') %></li>
-                </ul>
-                <% } else { %>
-                <strong class='bad'>No Recruiter</strong>
-                <% } %>
-            </div>
-        </div>
-    </div>
-
+<%- partial('details') %>
 
 </li>

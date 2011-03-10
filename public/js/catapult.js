@@ -10,4 +10,14 @@ $(document).ready(function(){
         $(this).find('.tick-count')
             .fadeOut();
     });
+
+
+$('nav').noisy({
+    'intensity' : 1,
+    'size' : 200,
+    'opacity' : 0.08,
+    'fallback' : '',
+    'monochrome' : false
+})
+
 });
