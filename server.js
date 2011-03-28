@@ -88,6 +88,7 @@ Server.error(function(err, req, res, next){
     err.arguments && log(err.arguments);
     err.stack && log(err.stack);
     log('*************************************');
+    res.redirect('/');
 });
 
 // Get rid of urls that end in / - makes Google Analytics easier to read

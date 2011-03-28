@@ -27,7 +27,7 @@ if ($('.datatable').length) {
         bLengthChange:  false,
         bPaginate:      false,
         aoColumns:      aoColumns,
-        oLanguage:      { sEmptyTable:    'Nothing to show! <strong> So sad</strong>.  <a href="/search/dan-yates">What it looks like when you have referrals.</a>' },
+        oLanguage:      { sEmptyTable:    'Nothing to show! <strong> So sad</strong>.' },
         aaSorting:      [ [$('.datatable').data('sort-column') || 0, $('.datatable').data('sort-direction') || 'asc' ] ]
     });
 
