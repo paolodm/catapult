@@ -38,6 +38,7 @@
         </ul>
     </div>
     <a href="/" class="logo"><img src="/images/logo.png" alt="Candidate Catapult" width="275" height="90" /></a>
+<% if (!jobvite_down) { %>
     <div class="tabs">
         <div class="tabgroup">
             <% var on_home_page = (current_url === session.home_page) %>
@@ -63,10 +64,19 @@
             <% }) %>
         </div>
     </div>
+    <% } %>
 </nav>
 <div class="content">
 <% } %>
-<%- body %>
+<% if (jobvite_down) { %>
+    <div style="background:url(http://lh5.ggpht.com/_hVOW2U7K4-M/SgJFPdzpA5I/AAAAAAABAWs/z6V9TtpqIM0/s640/x4x.jpg); width:640px; height:485px; margin: 50px auto;">
+        <div style="font-size: 20px; line-height: 20px; background: rgba(255, 0, 0, 0.5); color: white; padding: 20px; text-align: center;">
+            Jobvite seems to be having problems.
+        </div>
+    </div>
+<% } else { %>
+    <%- body %>
+<% } %>
 <% if (session.email) { %>
 
 </div>

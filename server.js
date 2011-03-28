@@ -72,7 +72,7 @@ function common() {
     Server.use(Express.session({ secret: 'catapult' }));
     Server.use(Express.bodyParser());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
-    Server.use(Express.static(PUBLIC, { maxAge: 60*60*24 })); //one day
+    Server.use(Express.static(PUBLIC, { maxAge: 31557600000 })); //oneYear
     Server.use(Server.router);
 }
 

@@ -79,18 +79,18 @@
             case Constants.PAGE_TYPE.managers:
             case Constants.PAGE_TYPE.teams:
             %><%-
-                partial('table/employee')
+                collection.length && partial('table/employee')
             %><%
                 break;
             case Constants.PAGE_TYPE.sources:
             case Constants.PAGE_TYPE.source:
             %><%-
-                partial('table/source')
+                collection.length && partial('table/source')
             %><%
                 break;
             case Constants.PAGE_TYPE.jobs:
             %><%-
-                partial('table/job')
+                collection.length && partial('table/job')
             %><%
                 break;
             default:
