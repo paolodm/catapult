@@ -40,7 +40,7 @@ $(document).ready(function(){
         .each(function(){
             var $textarea = $(this),
                 name = $textarea.attr('name'),
-                raw = $.storage.get(name);
+                raw =  $.storage.get(name);
             if (name != 'instructions' && raw && raw.length) {
                 $textarea.html(raw);
                 update($textarea);

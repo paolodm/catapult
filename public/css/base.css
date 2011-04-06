@@ -78,9 +78,9 @@ h4 {
 }
 
 .highlight {
-
+    color: black;
     background-color: #fff34d;
-    background-color: rgba(255, 243, 77, 0.8);
+    background-color: rgb(255, 243, 77);
     -moz-border-radius: 5px; /* FF1+ */
     -webkit-border-radius: 5px; /* Saf3-4 */
     border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */

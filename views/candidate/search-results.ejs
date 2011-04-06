@@ -1,4 +1,6 @@
-<% var color = (Object.keys(jobs).indexOf(candidate.job_id) || 0) + 1 %>
+<% var color = Constants.STATUS_OFFER[candidate.status] ? 'Hire'
+        : Constants.STATUS_INACTIVE[candidate.status] ? 'Rejected'
+        : 'Process'  %>
 <li class="result no-bullets">
 <div class="candidate-hover-details color<%= color %>" >
     <div class="candidate-hover-details-content">

@@ -6,11 +6,7 @@ $(document).ready(function(){
         layoutMode : 'straightDown'
     });
 
-    $('.search-results').isotope({
-        itemSelector : '.result',
-        layoutMode : 'fitRows'
 
-    });
 
 
 

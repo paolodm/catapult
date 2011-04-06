@@ -167,12 +167,17 @@
 }
 
 .candidate-hover-details .source-employee {
-    background: #FFCE00;
+    background: #518afc;
+    color: white;
     padding: 10px 5px;
     font-weight: bold;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 
+}
+
+.candidate-hover-details .source a {
+    font-size: smaller;
 }
 
 .candidate-hover-details .button {

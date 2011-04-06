@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    $('.search-results').isotope({
+        itemSelector : '.result',
+        layoutMode : 'fitRows'
+    });
+
 
     function fix_query(query) {
         return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-').toLowerCase();
@@ -14,9 +19,15 @@ $(document).ready(function(){
     $('.search .button').click(submit);
 
     $('.search').submit(submit);
+    var search_for = $.trim($q.val() || '');
 
-    if ($q.val()) {
-        $('.name').highlight( $q.val() );
+    if (search_for) {
+        $('.name, .source').highlight( search_for );
+        $('.highlight').parent().addClass('highlighted');
+
+        $.each(search_for.split(' '), function(word){
+            word && word.length && $('.name:not(.highlighted), .source:not(.highlighted)').highlight( word );
+        });
     }
 
     $('.search-link').bind('click', function(){
@@ -24,7 +35,7 @@ $(document).ready(function(){
         return false;
     });
 
-
+    setTimeout(function() {
     $('.color0 .candidate-hover-details-content').noisy({
         'intensity' : 1,
         'size' : 200,
@@ -32,4 +43,5 @@ $(document).ready(function(){
         'fallback' : '',
         'monochrome' : false
     });
+    }, 100);
 });

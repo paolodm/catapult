@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $.storage = new $.store();
-    
 
     $(document).delegate('td', 'mouseenter', function(){
         $(this).find('.tick-count')

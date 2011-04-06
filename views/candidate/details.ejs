@@ -2,7 +2,9 @@
 <div class="details">
     <h3 class="name"><strong><%= candidate.name %></strong></h3>
     <div class="days <%= candidate.group %> smaller"><%= candidate.status %> <%= candidate.days %> days ago (<%= candidate.date_short %>)</div>
-
+    <% if (candidate.applied_days) { %>
+    <div class="applied smaller">Applied <%= candidate.applied_days %> days ago.</div>
+    <% } %>
     <% if (job && job.title) { %>
     <div class="title section">
         <a href="/jobs/<%- url(job.title) %>"><%= job.title %></a>
@@ -20,13 +22,18 @@
         <a target="_blank" class="button" href="http://www.facebook.com/search.php?q=<%- encodeURI(candidate.name) %>">Facebook</a>
     </div>
 
-    <div class="source section section-title">Source</div>
-    <div class="<%= (candidate.source_type == 'Employee Referrals') ? ' source-employee' : '' %> relative">
-        <% if (candidate.source_type =='Employee Referrals') { %>
+    <div class="source section section-title">Source
+        <% if (candidate.source && candidate.source != candidate.source_type) { %>
+            <strong class="smaller"><%= candidate.source_type %></strong>
+        <% } %>
+    </div>
+    <div class="<%= (candidate.source_type == 'Employee Referral') ? ' source-employee' : ' source-not-employee' %> source relative">
+        <% if (candidate.source_type =='Employee Referral') { %>
             <div class="referral">&#9733;</div>
         <% } %>
 
         <%- candidate.source || candidate.source_type %>
+
     </div>
     <% if (job && job.title) { %>
     <div class="columns clearfix">
