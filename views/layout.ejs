@@ -24,13 +24,9 @@
     <div class="nav-meta">
         <ul>
             <li>
-            <% if (page_type != Constants.PAGE_TYPE.search) { %>
-                <form class="search" action="/search" method="get">
+                <form class="search  <%= page_type == Constants.PAGE_TYPE.search ? 'active' : '' %>" action="/search" method="get">
                     <input class="query" name="q" id="q" value="<%= locals.query || '' %>" placeholder="Find somebody" />
                 </form>
-            <% } else { %>
-                <a href="/search" class="search-link">Search</a>
-            <% } %>
             </li>
             <li><a href="/" style="font-weight: bold;"><%= session.name %></a></li>
             <li><a href="https://wiki.opower.com/x/Epe8">Help</a></li>

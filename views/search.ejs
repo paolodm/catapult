@@ -1,22 +1,18 @@
 <h2>Search for: <%= query %></h2>
 
-<form class="search" action="/search" method="get">
-    Find: <input class="query" name="q" id="q" value="<%= locals.query || '' %>" placeholder="Find somebody" />
-</form>
-
-<h3>Active &amp; Hired Candidates: <%= candidates.length %></h3>
+<h3>Active &amp; Hired Candidates: <%= candidates.length > 50 ? 'Showing 50 of ' + candidates.length : candidates.length %></h3>
 <% if (candidates.length) { %>
     <ul class="search-results active">
-        <%- partial('candidate/search-results', { collection: candidates, as: 'candidate' } ) %>
+        <%- partial('candidate/search-results', { collection: candidates.slice(0, 50), as: 'candidate' } ) %>
     </ul>
 <% } else { %>
     Nobody to show.
 <% }  %>
 
-<h3>Rejected Candidates: <%= rejected.length %></h3>
+<h3>Rejected Candidates: <%= rejected.length > 50 ? 'Showing 50 of ' + rejected.length : rejected.length %></h3>
 <% if (rejected.length) { %>
     <ul class="search-results rejected-candidates">
-        <%- partial('candidate/search-results', { collection: rejected.slice(0, 100), as: 'candidate' } ) %>
+        <%- partial('candidate/search-results', { collection: rejected.slice(0, 50), as: 'candidate' } ) %>
     </ul>
 <% } else { %>
     Nobody to show.
