@@ -221,6 +221,10 @@ td {
     white-space: nowrap;
 }
 
+td A {
+    white-space: nowrap;
+}
+
 .candidates td {
     padding: 1em 8px 1em 2px;
 }

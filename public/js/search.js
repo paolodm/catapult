@@ -20,13 +20,12 @@ $(document).ready(function(){
 
     $('.search').submit(submit);
     var search_for = $.trim($q.val() || '');
-
     if (search_for) {
         $('.name, .source').highlight( search_for );
         $('.highlight').parent().addClass('highlighted');
-
-        $.each(search_for.split(' '), function(word){
-            word && word.length && $('.name:not(.highlighted), .source:not(.highlighted)').highlight( word );
+        var $find_in = $('.name:not(.highlighted), .source:not(.highlighted)');
+        $.each(search_for.split(' '), function(i, word){
+            word && word.length && $find_in.highlight( word );
         });
     }
 

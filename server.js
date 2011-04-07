@@ -69,7 +69,7 @@ function common() {
     });
 
     Server.use(Express.cookieParser());
-    Server.use(Express.session({ secret: 'catapult' }));
+    Server.use(Express.session({ secret: 'catapult', cookie: { maxAge: 86400000 } })); //24 hours
     Server.use(Express.bodyParser());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
     Server.use(Express.static(PUBLIC, { maxAge: 31557600000 })); //oneYear 31557600000
