@@ -1,9 +1,9 @@
 <% var job = jobs[candidate.job_id] || extra_jobs[candidate.job_id] %>
 <div class="details">
     <h3 class="name"><strong><%= candidate.name %></strong></h3>
-    <div class="days <%= candidate.group %> smaller"><%= candidate.status %> <%= candidate.days %> days ago (<%= candidate.date_short %>)</div>
+    <div class="days <%= candidate.group %> smaller"><%= candidate.status %> <%= candidate.days === 0 ? 'today' : candidate.days === 1 ? 'yesterday' : candidate.days + ' days ago.' %>  (<%= candidate.date_short %>)</div>
     <% if (candidate.applied_days) { %>
-    <div class="applied smaller">Applied <%= candidate.applied_days %> days ago.</div>
+    <div class="applied smaller">Applied <%= candidate.applied_days === 1 ? 'yesterday' : candidate.applied_days + ' days  ago' %>.</div>
     <% } %>
     <% if (job && job.title) { %>
     <div class="title section">
