@@ -22,14 +22,12 @@ if (process.platform != 'darwin' && process.platform != 'cygwin') {
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'catapult';
-/*
 process.addListener('uncaughtException', function (err, stack) {
     log('++++++++++++EXCEPTION++++++++++++');
     err.message && log(err.message);
     err.stack && log(err.stack);
     log('+++++++++++++++++++++++++++++++++');
 });
-*/
 function production(){
     //Server.use(Express.conditionalGet());
     //Server.use(Express.cache());
@@ -88,7 +86,7 @@ Server.error(function(err, req, res, next){
     err.arguments && log(err.arguments);
     err.stack && log(err.stack);
     log('*************************************');
-    res.redirect('/');
+    //res.redirect('/');
 });
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
