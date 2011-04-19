@@ -19,7 +19,7 @@
     <div class="description">These candidates need followup.  Only you and recruiters see this.</div>
 
     <ul class="clearfix">
-        <%- partial('candidate/mini', { collection: statuses[key].candidates.reverse(), as: 'candidate', locals: locals } ) %>
+        <%- partial('candidate/mini', { collection: statuses[key].candidates, as: 'candidate', locals: locals } ) %>
     </ul>
 </div>
 <% }
