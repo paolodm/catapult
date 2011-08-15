@@ -7,10 +7,10 @@
 <% if (options.when) { %>
 
     <div class="filter">
-        When:
+        <label>When:</label>
         <% Constants.TIMEFRAMES.forEach(function(value, id){ %>
-        <%- id.trim() == '2010' ? '<br/>&nbsp; 2010: ' : '' %>
-        <%- id.trim() == '2011' ? '<br/>&nbsp; 2011: ' : '' %>
+        <%- id.trim() == '2010' ? '<br/><label>&nbsp; 2010: </label>' : '' %>
+        <%- id.trim() == '2011' ? '<br/><label>&nbsp; 2011: </label>' : '' %>
         <a href="/sources<%= options.source_type ? '/' + options.source_type : '' %>?when=<%= url(id) %>" class="button pill <%= options.when == id ? ' active ' : ''%>"><%= id %></a>
         <% }) %>
     </div>
