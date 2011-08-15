@@ -9,6 +9,8 @@
     <div class="filter">
         When:
         <% Constants.TIMEFRAMES.forEach(function(value, id){ %>
+        <%- id.trim() == '2010' ? '<br/>&nbsp; 2010: ' : '' %>
+        <%- id.trim() == '2011' ? '<br/>&nbsp; 2011: ' : '' %>
         <a href="/sources<%= options.source_type ? '/' + options.source_type : '' %>?when=<%= url(id) %>" class="button pill <%= options.when == id ? ' active ' : ''%>"><%= id %></a>
         <% }) %>
     </div>
