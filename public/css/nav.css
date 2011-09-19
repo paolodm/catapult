@@ -130,7 +130,7 @@ input[type=text] {
 }
 
 .key .candidate-mini {
-    width: 49%;
+    width: 30%;
     float: left;
 }
 
