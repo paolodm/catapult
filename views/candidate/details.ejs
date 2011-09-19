@@ -27,8 +27,10 @@
             <strong class="smaller"><%= candidate.source_type %></strong>
         <% } %>
     </div>
-    <div class="<%= (candidate.source_type == 'Employee Referral') ? ' source-employee' : ' source-not-employee' %> source relative">
-        <% if (candidate.source_type =='Employee Referral') { %>
+    <div class="<%= (candidate.source_type == 'Employee Referral' || candidate.source_type =='Recruiter') ? ' source-employee' : ' source-not-employee' %> source relative">
+        <% if (candidate.source_type =='Recruiter') { %>
+            <div class="referral">S</div>
+        <% } if (candidate.source_type =='Employee Referral') { %>
             <div class="referral">&#9733;</div>
         <% } %>
 

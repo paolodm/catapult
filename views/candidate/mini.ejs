@@ -7,7 +7,9 @@
     </div>
 
     <div class="mini-content color<%= color %>">
-        <% if (candidate.source_type =='Employee Referral') { %>
+        <% if (candidate.source_type =='Recruiter') { %>
+        <div class="referral">S</div>
+        <% } else if (candidate.source_type =='Employee Referral') { %>
         <div class="referral">&#9733;</div>
         <% } %>
         <div class="name">
