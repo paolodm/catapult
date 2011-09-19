@@ -22,7 +22,13 @@ $(document).ready(function(){
 
         $('.swimlane .candidate-mini' + filter_query + '').css({opacity: 1});
 
-        var filter = $.makeArray($('.filter-out').map(function(){return  ':not(' + $(this).data('filter') + ')';})).join('');
+        var metaFilter = $.makeArray($('.filter-out.meta-filter').map(function(){return $(this).data('filter');})).join('');
+        var jobFilter = $.makeArray($('.filter-out:not(.meta-filter)').map(function(){return $(this).data('filter');})).join(',');
+        var filter =  (metaFilter ? ':not(' + metaFilter + ')' : '')
+                     + (jobFilter ? ':not(' + jobFilter + ')' : '');
+
+        console.log(filter);
+
         $('.swimlane').isotope({
           itemSelector : '.candidate-mini',
           layoutMode : 'straightDown', filter: filter

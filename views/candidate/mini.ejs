@@ -1,6 +1,6 @@
 <% var color = (Object.keys(jobs).indexOf(candidate.job_id) || 0) + 1 %>
 
-<li class="candidate-mini filter<%= color %> <%= candidate.source_type == 'Employee Referral' ? 'employeeReferral' : '' %> <%= candidate.group %>">
+<li class="candidate-mini filter<%= color %> <%= candidate.source_type == 'Employee Referral' ? 'employeeReferral' : '' %> <%= candidate.source_type == 'Recruiter' ? 'sourcedCandidate' : '' %> <%= candidate.group %>">
 
     <div class="tag color<%= color %>">
         <span class="days" ><%- candidate.days || 0 %></span>
