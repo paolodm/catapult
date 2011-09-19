@@ -16,6 +16,8 @@ $(document).ready(function(){
 
         if (filter_query === '') {
             $('.titles a.title').addClass('filter-out');
+        } else if (filter_query === '*') {
+            $('.titles a.title').removeClass('filter-out');
         } else {
             $this.toggleClass('filter-out');
         }
