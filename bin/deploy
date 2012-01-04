@@ -4,6 +4,6 @@
 # but this one works.
 
 echo Deploying...
-# rsync -e ssh --exclude 'data' -vaz ~/projects/catapult/ chrisheriot@10.1.10.108:~/projects/catapult/
-rsync -e ssh --cvs-exclude --delete --exclude 'data' -rltzuv ~/projects/catapult/ dylan.greene@web01.opower.com:~/catapult/
+# --exclude 'data'
+rsync -e ssh --cvs-exclude --delete -rltzuv ~/projects/catapult/ dylan.greene@web01.opower.com:~/catapult/
 echo Complete!
