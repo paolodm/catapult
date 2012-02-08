@@ -50,53 +50,96 @@ http://www.colourlovers.com/palette/772970/200fruits_of_passion
 }
 
 .color7 {
-    background-color: #D41E45; /* 212/30/69 */
+    background-color: #DF1E4F; /* 212/30/69 */
 }
 
 .color8 {
-    background-color: #C02942; /* 192/41/66 */
+    background-color: #542437; /* 192/41/66 */
 }
 
 .color9 {
-    background-color: #542437; /* 84/36/55 */
+    background-color: #ff3300;
 }
 
 .color10 {
-    background-color: #5E412F; /* 94/65/47 */
+    background-color: #cc6633;
 }
 
 .color11 {
-    background-color: #888;
+    background-color: #966600;
 }
 
 .color12 {
-    background-color: #777;
+    background-color: #cc9966;
 }
 
 .color13 {
-    background-color: #666;
+    background-color: #F4A100;
 }
 
 .color14 {
-    background-color: #555;
+    background-color: #ff0066;
 }
 
 .color15 {
-    background-color: #444;
+    background-color: #AAA8F5;
 }
 
 .color16 {
-    background-color: #333;
+    background-color: #666699;
 }
 
 .color17 {
-    background-color: #333;
+    background-color: #003333;
 }
 
 .color18 {
-    background-color: #333;
+    background-color: #000066;
 }
 
+.color19 {
+    background-color: #330033;
+}
+
+.color20 {
+    background-color: #0099cc;
+}
+.color21 {
+    background-color: #3366ff;
+}
+.color22 {
+    background-color: #cc00ff;
+}
+.color23 {
+    background-color: #339900;
+}
+.color24 {
+    background-color: #00cc00;
+}
+.color25 {
+    background-color: #009900;
+}
+.color26 {
+    background-color: #099933;
+}
+.color27 {
+    background-color: #336666;
+}
+.color28 {
+    background-color: #666;
+}
+.color29 {
+    background-color: #333;
+}
+.color30 {
+    background-color: #1C75BC;
+}
+.color31 {
+    background-color: #1C75BC;
+}
+.color32 {
+    background-color: #1C75BC;
+}
 
 .tick.low {
     background: green;
