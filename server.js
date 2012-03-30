@@ -48,7 +48,7 @@ function development() {
     Server.locals({
         development: true
     });
- 
+
     log('running in development mode');
 }
 
