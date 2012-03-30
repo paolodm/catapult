@@ -1,0 +1,5 @@
+ssh wbpr001.va.opower.it
+tail -f -n 1000 /var/www/catapult.opower.com/log/catapult.log
+tail -f -n 1000 /var/www/catapult.opower.com/log/catapult.log.1
+
+sudo /etc/init.d/catapult start

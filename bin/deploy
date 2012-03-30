@@ -6,6 +6,6 @@
 echo Deploying...
 #--exclude 'data'
 #rsync -e ssh --cvs-exclude --delete -rltzuv ~/projects/catapult/ dylan.greene@web01.opower.com:~/catapult/
-/usr/local/bin/rsync -e ssh --cvs-exclude --exclude 'data' --exclude 'log'  --exclude '.idea' -rlzuv ~/projects/catapult/ dylan.greene@wbpr001.va.opower.it:/var/www/catapult.opower.com/
+/usr/local/bin/rsync -e ssh --cvs-exclude --exclude 'data' --exclude 'node_modules'  --exclude 'log'  --exclude '.idea' -rlzuv ~/projects/catapult/ dylan.greene@wbpr001.va.opower.it:/var/www/catapult.opower.com/
 
 echo Complete!
