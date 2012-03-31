@@ -8,9 +8,6 @@ var log = require('logging').from(__filename),
     Express = require('express'),
     Server = module.exports = Express.createServer();
 
-var Google = require('connect-googleapps');
-
-
 var Assets = require('./lib/assets');
 var Controller = require('./lib/controller');
 
