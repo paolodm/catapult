@@ -8,6 +8,9 @@ var log = require('logging').from(__filename),
     Express = require('express'),
     Server = module.exports = Express.createServer();
 
+var Google = require('connect-googleapps');
+
+
 var Assets = require('./lib/assets');
 var Controller = require('./lib/controller');
 
@@ -22,12 +25,15 @@ if (process.platform != 'darwin' && process.platform != 'cygwin') {
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'catapult';
+
+/*
 process.addListener('uncaughtException', function (err, stack) {
     log('++++++++++++EXCEPTION++++++++++++');
     err.message && log(err.message);
     err.stack && log(err.stack);
     log('+++++++++++++++++++++++++++++++++');
 });
+*/
 function production(){
     //Server.use(Express.conditionalGet());
     //Server.use(Express.cache());
