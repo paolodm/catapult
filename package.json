@@ -20,7 +20,7 @@
         "jobvite": "*",
         "lean":    "*",
         "express": "*",
-        "connect": "*",
+        "connect": "2.0.3",
         "ejs": "*",
         "connect-assetmanager": "*",
         "connect-assetmanager-handlers": "*",
@@ -33,7 +33,7 @@
         "step": "*",
         "async": "*",
         "request": "&",
-        "emailjs": "*"
+        "nodemailer": "*"
     },
     "main": "server",
     "engines": { "node": ">=0.6.8" },

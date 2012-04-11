@@ -15,7 +15,7 @@
         <% if (job) { %>
         <% if (job.status == 'Open') { %><a href="/jobs/<%= url(job.title) %>"><%= job.title %></a>
         <% } else { %><span class="inactive"><%= job.title %></span><% } %>
-        <% } %>
+        <% } else { %><span class="inactive">Position removed</span><% } %>
     </td>
     <td><%- candidate.source %> <a href="/sources/<%-url(candidate.source_type) %>"><%= candidate.source_type %></a></td>
     <td><%- job && job.title != 'Athlete Pool' && job.recruiters && job.recruiters[0] && partial('recruiter', { collection: job.recruiters, as: 'recruiter' }) || '' %></td>

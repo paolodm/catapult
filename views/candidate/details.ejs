@@ -5,14 +5,16 @@
     <% if (candidate.applied_days) { %>
     <div class="applied smaller">Applied <%= candidate.applied_days === 1 ? 'yesterday' : candidate.applied_days + ' days  ago' %>.</div>
     <% } %>
-    <% if (job && job.title) { %>
     <div class="title section">
+    <% if (job && job.title) { %>
         <a href="/jobs/<%- url(job.title) %>"><%= job.title %></a>
         <div class="team smaller">
             <a class="team" href="/teams/<%- url(job.department) %>"><%= job.department %> - <%= job.location %></a>
         </div>
-    </div>
+    <% } else { %>
+    <span class="inactive">Position removed</span>
     <% } %>
+    </div>
 
     <div class="hiring section section-title">Search for <%= candidate.name %></div>
     <div class="smaller">
