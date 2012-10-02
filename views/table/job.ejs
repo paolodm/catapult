@@ -1,6 +1,8 @@
-<tr>
+<% if (!job.isPrivate || session.isRecruiter || session.isAdmin) { %>
+<tr style="<%= job.isPrivate ? 'background: #dfdfef;' : '' %>" >
     <td>
         <a href="/jobs/<%= url(job.title) %>"><%= job.title %></a>
+
     </td>
     <td class="<%= job.count_candidates === 0 ? 'bad' : '' %>"><%= job.count_candidates %></td>
     <td>
@@ -12,6 +14,8 @@
     <td>
         <% if (job.isOpen && job.status == 'Open') { %>
             <a href="http://opowerjobs.com/<%= job.id %>">opowerjobs</a>
+        <% } else if (job.isPrivate) { %>
+            Private
         <% } else {  %>
             <span class="bad">Not Online</span>
         <% } %>
@@ -19,3 +23,4 @@
     <%- partial('../ticks/status', {object: job.statuses, as: 'statuses'}) %>
 
 </tr>
+<% } %>
