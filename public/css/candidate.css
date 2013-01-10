@@ -19,7 +19,7 @@
 
 
 .candidate-mini.employeeReferral .name {
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .referral {
@@ -36,6 +36,7 @@
 
 
 .candidate-mini .tag {
+    background-color: #1C75BC;
     display: block;
     float: left;
     width: 15%;
@@ -74,6 +75,7 @@
 
 
 .candidate-mini .mini-content {
+    background-color: #1C75BC;
     color: #fff;
     display: block;
     float: left;

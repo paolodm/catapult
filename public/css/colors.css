@@ -7,138 +7,129 @@ http://www.colourlovers.com/palette/772970/200fruits_of_passion
 */
 
 .colorHire {
-    background-color: #1C75BC;
+    background-color: #1C75BC !important;
 }
 
 .colorProcess {
-    background-color: #F07818;
+    background-color: #F07818 !important;
 }
 
 .colorRejected {
-    background-color: #333;
+    background-color: #333 !important;
 }
 
 .color0 {
-    background-color: #1C75BC;
+    background-color: #1C75BC !important;
 }
 
 .color1 {
-    background-color: #00A0B0; /* 0/160/176 */
+    background-color: #00A0B0 !important; /* 0/160/176 */
 }
 
 .color2 {
-    background-color: #F0A830; /* 240/168/48 */
+    background-color: #F0A830 !important; /* 240/168/48 */
 
 }
 
 .color3 {
-    background-color: #F07818; /* 240/120/24 */
+    background-color: #F07818 !important; /* 240/120/24 */
 
 }
 
 .color4 {
-    background-color: #53777A;  /* 83/119/122 */
+    background-color: #53777A !important;  /* 83/119/122 */
 
 }
 
 .color5 {
-    background-color: #D95B43  /* HEX 217/91/67; */
+    background-color: #D95B43 !important;  /* HEX 217/91/67; */
 }
 
 .color6 {
-    background-color: #B5AC01; /* 181/172/1 */
+    background-color: #B5AC01 !important; /* 181/172/1 */
 }
 
 .color7 {
-    background-color: #DF1E4F; /* 212/30/69 */
+    background-color: #DF1E4F !important; /* 212/30/69 */
 }
 
 .color8 {
-    background-color: #542437; /* 192/41/66 */
+    background-color: #542437 !important; /* 192/41/66 */
 }
 
 .color9 {
-    background-color: #ff3300;
+    background-color: #ff3300 !important;
 }
 
 .color10 {
-    background-color: #cc6633;
+    background-color: #cc6633 !important;
 }
 
 .color11 {
-    background-color: #966600;
+    background-color: #966600 !important;
 }
 
 .color12 {
-    background-color: #cc9966;
+    background-color: #cc9966 !important;
 }
 
 .color13 {
-    background-color: #F4A100;
+    background-color: #F4A100 !important;
 }
 
 .color14 {
-    background-color: #df4036;
+    background-color: #df4036 !important;
 }
 
 .color15 {
-    background-color: #AAA8F5;
+    background-color: #AAA8F5 !important;
 }
 
 .color16 {
-    background-color: #666699;
+    background-color: #666699 !important;
 }
 
 .color17 {
-    background-color: #003333;
+    background-color: #003333 !important;
 }
 
 .color18 {
-    background-color: #000066;
+    background-color: #000066 !important;
 }
 
 .color19 {
-    background-color: #330033;
+    background-color: #330033 !important;
 }
 
 .color20 {
-    background-color: #0099cc;
+    background-color: #0099cc !important;
 }
 .color21 {
-    background-color: #3366ff;
+    background-color: #3366ff !important;
 }
 .color22 {
-    background-color: #cd400f;
+    background-color: #cd400f !important;
 }
 .color23 {
-    background-color: #339900;
+    background-color: #339900 !important;
 }
 .color24 {
-    background-color: #00cc00;
+    background-color: #00cc00 !important;
 }
 .color25 {
-    background-color: #009900;
+    background-color: #009900 !important;
 }
 .color26 {
-    background-color: #099933;
+    background-color: #099933 !important;
 }
 .color27 {
-    background-color: #336666;
+    background-color: #336666 !important;
 }
 .color28 {
-    background-color: #666;
+    background-color: #666 !important;
 }
 .color29 {
-    background-color: #333;
-}
-.color30 {
-    background-color: #1C75BC;
-}
-.color31 {
-    background-color: #1C75BC;
-}
-.color32 {
-    background-color: #1C75BC;
+    background-color: #333 !important;
 }
 
 .tick.low {

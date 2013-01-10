@@ -19,7 +19,7 @@
         "logging": "*",
         "jobvite": "*",
         "lean":    "*",
-        "express": "*",
+        "express": "2.x",
         "connect": "2.0.3",
         "ejs": "*",
         "connect-assetmanager": "*",
