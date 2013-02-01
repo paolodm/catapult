@@ -12,6 +12,7 @@
         <%- id.trim() == '2010' ? '<br/><label>&nbsp; 2010: </label>' : '' %>
         <%- id.trim() == '2011' ? '<br/><label>&nbsp; 2011: </label>' : '' %>
         <%- id.trim() == '2012' ? '<br/><label>&nbsp; 2012: </label>' : '' %>
+        <%- id.trim() == '2013' ? '<br/><label>&nbsp; 2013: </label>' : '' %>
         <% if (value.end_date && value.start_date < Date.now() ) { %>
         <a href="/sources<%= options.source_type ? '/' + options.source_type : '' %>?when=<%= url(id) %>" class="button pill <%= options.when == id ? ' active ' : ''%>"><%= id %></a>
         <% } %>
