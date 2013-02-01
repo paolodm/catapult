@@ -22,8 +22,6 @@
         "express": "2.x",
         "connect": "2.0.3",
         "ejs": "*",
-        "connect-assetmanager": "0.0.27",
-        "connect-assetmanager-handlers": "0.0.18",
         "Faker": "*",
         "openid": "*",
         "markdown-js": "*",
