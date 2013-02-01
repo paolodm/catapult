@@ -4,7 +4,7 @@ Addon for companies using Jobvite.
 
 Easy to use system for recruiters, hiring managers, and employees to see candidates in a kanban-style layout for easily tracking the progress of candidates and reqs.
 
-[Catapult Screenshot](http://i.imgur.com/BsFXd.png "Names are made up for this screenshot.")
+[![Catapult Screenshot](http://i.imgur.com/BsFXd.png)](http://i.imgur.com/BsFXd.png)
 
 Includes searching, filtering, email updates, single-sign-on, and more.
 
