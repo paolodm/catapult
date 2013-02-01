@@ -22,8 +22,8 @@
         "express": "2.x",
         "connect": "2.0.3",
         "ejs": "*",
-        "connect-assetmanager": "*",
-        "connect-assetmanager-handlers": "*",
+        "connect-assetmanager": "0.0.27",
+        "connect-assetmanager-handlers": "0.0.18",
         "Faker": "*",
         "openid": "*",
         "markdown-js": "*",
@@ -32,8 +32,8 @@
         "proto": "*",
         "step": "*",
         "async": "*",
-        "request": "&",
-        "nodemailer": "*"
+        "request": "2.9.153",
+        "nodemailer": "0.3.39 "
     },
     "main": "server",
     "engines": { "node": ">=0.6.8" },
