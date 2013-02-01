@@ -11,6 +11,7 @@ Includes searching, filtering, email updates, single-sign-on, and more.
 ## Setting up Catapult
 
 This code can be used by any company but will require some customization to make it work.
+
 * Integration with company's authentication system so employees can sign in but nobody else can.
 * Integration with the company's Jobvite system. This includes creating some custom reports that Catapult uses to retrieve data.
 * Configuration to match company hiring workflow. Catapult will create a column for each workflow step candidates go through such as Phone Screen and Offer Call.
