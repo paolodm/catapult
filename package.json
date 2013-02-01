@@ -32,7 +32,7 @@
         "proto": "*",
         "step": "*",
         "async": "*",
-        "request": "&",
+        "request": "2.9.153",
         "nodemailer": "*"
     },
     "main": "server",
