@@ -1,56 +1,24 @@
-# OPOWER Jobs
+# Catapult
 
-  Complex web site example built on [node](http://nodejs.org) using [Express](http://github.com/visionmedia/express) and  [Connect](http://github.com/extjs/Connect).
+Addon for companies using Jobvite.
 
-## See it in action
+Easy to use system for recruiters, hiring managers, and employees to see candidates in a kanban-style layout for easily tracking the progress of candidates and reqs.
 
-  [http://www.opowerjobs.com](http://www.opowerjobs.com)
+[Catapult Screenshot](http://i.imgur.com/BsFXd.png "Names are made up for this screenshot.")
 
-## Install dependencies
+Includes searching, filtering, email updates, single-sign-on, and more.
 
-    $ npm install jobvite express ejs logging connect-assetmanager connect-assetmanager-handlers xml2js proto
+## Setting up Catapult
 
-## Running locally or on your own server
+This code can be used by any company but will require some customization to make it work.
+* Integration with company's authentication system so employees can sign in but nobody else can.
+* Integration with the company's Jobvite system. This includes creating some custom reports that Catapult uses to retrieve data.
+* Configuration to match company hiring workflow. Catapult will create a column for each workflow step candidates go through such as Phone Screen and Offer Call.
+* Special handling of custom Jobvite fields set up by recruiting.
 
-    $ node d.js
+## Created by
 
-  d.js will automatically restart the server if any js code is changed.
-
-## Running on Joyent and [no.de](http://no.de).
-
-  Install dependencies
-
-    $ git push joyent master
-
-## Features
-
-  * Job listing data provided by xml feed from Jobvite.
-  * Simple live search engine.
-  * Real-world example of many features from Express/Connect.
-
-## Purpose
-
-  * Learn Node.js
-  * Prepare for [Node Knockout](http://http://nodeknockout.com/).
-  * Replace our underwhelming ASP.NET-based job site with something much cooler and standards-based.
-  * Attract the best developers to this amazing cash-flow positive company.
-
-## Node Knockout
-
-  Feel free to use any part of this for your [Node Knockout](http://http://nodeknockout.com/) project.  We'll be particpating as well, but with a whole new project.
-
-
-## Contributors
-
-  * Dylan Greene (code) [dylang](http://github.com/dylang)
-  * Garrett Miller (design, art, photos) [heyitsgarrett](http://github.com/heyitsgarrett)
-  * OPOWER Marketing and HR team members (text and direction)
-
-## Thanks
-
-  * Dan Yates, CEO/co-founder of OPOWER, and who got this whole thing started.
-  * Our coworkers at OPOWER for helping out and getting things done so we could spend time on this side project.
-  * The guys on #node.js for providing support and fixing bugs with amazing speed and gusto, especially [Creationix](http://github.com/creationix), [Mape](http://github.com/mape), [TJ Holowaychuk](http://github.com/visionmedia), and [Isaacs](http://github.com/isaacs).
+  * Dylan Greene  (http://github.com/dylang) (dylang@gmail.com)
 
 ## License
 
