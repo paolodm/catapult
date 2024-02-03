@@ -30,7 +30,7 @@
         "proto": "*",
         "step": "*",
         "async": "*",
-        "request": "2.9.153",
+        "request": "2.88.2",
         "nodemailer": "0.3.39 "
     },
     "main": "server",
