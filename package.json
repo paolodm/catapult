@@ -19,7 +19,7 @@
         "logging": "*",
         "jobvite": "*",
         "lean":    "*",
-        "express": "2.x",
+        "express": "4.19.2",
         "connect": "2.0.3",
         "ejs": "*",
         "Faker": "*",
